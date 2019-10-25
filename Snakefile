@@ -7,6 +7,8 @@ with open("gwasdir.txt", "r") as f:
 	GWASDIR = f.read().strip()
 ID = [line.strip() for line in open("idlist.txt", "r")]
 
+if not os.path.exists("job_reports"):
+	os.makedirs("job_reports")
 
 rule all:
 	input:

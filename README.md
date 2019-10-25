@@ -5,14 +5,35 @@
 This repository incorporates a bunch of submodules (one of which itself also has a submodule). To clone everything:
 
 ```
-git clone --recurse-submodules git@github.com:MRCIEU/igd-hpc-import.git
+git clone --recurse-submodules git@github.com:MRCIEU/igd-hpc-pipeline.git
 ```
 
 or if using https authentication
 
 ```
-git clone --recurse-submodules https://github.com/MRCIEU/igd-hpc-import.git
+git clone --recurse-submodules https://github.com/MRCIEU/igd-hpc-pipeline.git
 ```
+
+## Setting up environments
+
+```
+module add languages/anaconda3/5.2.0-tflow-1.11
+
+# gwas2vcf
+cd resources/gwas2vcf
+python3 -m venv venv
+source ./venv/bin/activate
+./venv/bin/pip install -r requirements.txt
+
+# ldsc
+cd ../gwas_processing/ldsc
+conda env create -f environment.yml
+
+# mrbase report module
+cd ../mrbase-report-module
+conda env create -f env/environment.yml
+```
+
 
 ## Background 
 

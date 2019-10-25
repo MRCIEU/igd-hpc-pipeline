@@ -9,6 +9,7 @@ b <- read.csv(json_template, stringsAsFactors=FALSE)
 b <- subset(b, select=-c(X))
 stopifnot(all(file.exists(b$inpath)))
 b$delimiter[b$delimiter == "tab"] <- "\t"
+b$delimiter[b$delimiter == "space"] <- " "
 
 b <- subset(b, meta_upload == "Success")
 

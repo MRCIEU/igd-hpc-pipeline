@@ -12,14 +12,13 @@ stopifnot(all(file.exists(b$inpath)))
 b$delimiter[b$delimiter == "tab"] <- "\t"
 b$delimiter[b$delimiter == "space"] <- " "
 table(b$delimiter)
-# b <- subset(b, meta_upload == "Success")
-
 
 out <- mclapply(1:nrow(b), function(i)
 {
 	message(i, " of ", nrow(b))
 	dir.create(path = dirname(b$data[i]), recursive=TRUE)
 	file.copy(b$inpath[i], b$data[i], overwrite=TRUE)
+	file.copy(b$jsonmeta[i], b$dirname[i], overwrite=TRUE)
 	dat <- b[i, !names(b) %in% c("dirname", "jsonout", "inpath")] %>% as.list()
 	dat <- Filter(Negate(anyNA), dat)
 	write_json(dat, b$jsonout[i], auto_unbox = TRUE)

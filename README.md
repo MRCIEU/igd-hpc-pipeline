@@ -42,8 +42,8 @@ The objective of this pipeline is to process many similar GWAS datasets at once.
 This pipeline has the following steps:
 
 1. (Optional) Flip to forward strand and map rs IDs to chromosome and position
-2. Upload meta data about each GWAS to the Neo4j database (TODO)
-3. Organise the files into directory structures based on their (TODO)
+2. Genearte meta data about each GWAS (eventually this will pass to the Neo4j database)
+3. Organise the files into directory structures based on their
 4. Create harmonised vcf files
 5. Add dbsnp IDs, normalise, and 1000 genomes allele frequencies
 6. Perform clumping
@@ -64,7 +64,7 @@ If the dataset doesn't have chromosome/position columns, or might not have all S
 Here, for each dataset, we upload the metadata (e.g. trait name, pmid, etc) to Neo4j, and receive a unique identifier. This allows us to create a new spreadsheet which has all the information required to describe each dataset, and its final location
 
 ```
-Rscript resources/metadata_to_neo4j.r <inputdir> <gwasdir> <csv> <processedcsv>
+Rscript resources/metadata_to_json.r <inputdir> <gwasdir> <csv> <processedcsv> <cores>
 ```
 
 Three things needed to start:
@@ -102,9 +102,11 @@ This will create
 gwasdir/
       <id1>/
             dataset1.txt.gz
+            <id1>.json
             <id1>_data.json
       <id2>/
             dataset2.txt.gz
+            <id2>.json
             <id2>_data.json
       ...
 ```

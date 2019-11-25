@@ -69,7 +69,7 @@ sink <- mclapply(1:nrow(b), function(i)
 	x <- b[i,meta_index] %>% as.list()
 	x <- Filter(Negate(anyNA), x)
 	jsonfile <- file.path(indir, paste0(x$id, ".json"))
-	write_json(b, jsonfile, auto_unbox = TRUE, pretty=TRUE)
+	write_json(x, jsonfile, auto_unbox = TRUE, pretty=TRUE)
 }, mc.cores=cores)
 
 # Create data for json creation

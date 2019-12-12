@@ -59,7 +59,7 @@ This pipeline has the following steps:
 
 If the dataset doesn't have chromosome/position columns, or might not have all SNPs on forward strand, then run the `resources/pre-harmonise.r` script
 
-### 2. Upload meta data to neo4j
+### 2. Organise meta data
 
 Here, for each dataset, we upload the metadata (e.g. trait name, pmid, etc) to Neo4j, and receive a unique identifier. This allows us to create a new spreadsheet which has all the information required to describe each dataset, and its final location
 

@@ -21,6 +21,6 @@ out <- mclapply(1:nrow(b), function(i)
 	file.copy(b$jsonmeta[i], b$dirname[i], overwrite=TRUE)
 	dat <- b[i, !names(b) %in% c("dirname", "jsonout", "inpath")] %>% as.list()
 	dat <- Filter(Negate(anyNA), dat)
-	write_json(dat, b$jsonout[i], auto_unbox = TRUE)
+	write_json(dat, b$jsonout[i], auto_unbox = TRUE, pretty=TRUE)
 }, mc.cores=cores)
 

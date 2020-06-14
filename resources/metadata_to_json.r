@@ -20,7 +20,7 @@ cores <- as.numeric(args[5])
 
 b <- read.csv(ss, stringsAsFactors=FALSE)
 meta_required <- c("id", "build", "group_name", "trait", "category", "subcategory", "population", "sex", "nsnp")
-meta_allowed <- c("pmid", "year", "author", "units", "mr", "sample_size", "ncase", "ncontrol", "note", "sd", "priority", "access")
+meta_allowed <- c("pmid", "year", "author", "units", "mr", "sample_size", "ncase", "ncontrol", "note", "sd", "priority", "access", "ontology")
 col_required <- c("chr_col", "pos_col", "ea_col", "oa_col", "beta_col", "se_col", "pval_col", "delimiter", "header", "build")
 col_allowed <- c("ncase_col", "snp_col", "eaf_col", "oaf_col", "imp_z_col", "imp_info_col", "ncontrol_col", "id", "cohort_cases", "cohort_controls")
 

@@ -17,13 +17,14 @@ git clone --recurse-submodules https://github.com/MRCIEU/igd-hpc-pipeline.git
 ## Setting up environments
 
 ```
-module add languages/anaconda3/5.2.0-tflow-1.11
+module add languages/anaconda3/2020-3.8.5
 
 # gwas2vcf
 cd resources/gwas2vcf
 python3 -m venv venv
 source ./venv/bin/activate
 ./venv/bin/pip install -r requirements.txt
+./venv/bin/pip install git+git://github.com/bioinformed/vgraph@v1.4.0#egg=vgraph
 
 # ldsc
 cd ../gwas_processing/ldsc

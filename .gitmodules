@@ -1,12 +1,12 @@
 [submodule "resources/gwas2vcf"]
 	path = resources/gwas2vcf
 	url = git@github.com:MRCIEU/gwas2vcf.git
-[submodule "resources/mrbase-report-module"]
-	path = resources/mrbase-report-module
-	url = git@github.com:MRCIEU/mrbase-report-module.git
 [submodule "gwas_processing"]
 	path = resources/gwas_processing
 	url = git@github.com:MRCIEU/gwas_processing.git
 [submodule "resources/IGD-elasticsearch"]
 	path = resources/IGD-elasticsearch
 	url = git@github.com:MRCIEU/IGD-elasticsearch.git
+[submodule "resources/opengwas-reports"]
+	path = resources/opengwas-reports
+	url = git@github.com:MRCIEU/opengwas-reports.git

@@ -299,6 +299,7 @@ snakemake -prk \
 --cluster-config bc4-cluster.json \
 --cluster "sbatch \
   --job-name={cluster.name} \
+  --account={cluster.account} \
   --partition={cluster.partition} \
   --nodes={cluster.nodes} \
   --ntasks-per-node={cluster.ntask} \
@@ -307,4 +308,3 @@ snakemake -prk \
   --mem={cluster.mem} \
   --output={cluster.output}"
 ```
-

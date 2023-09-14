@@ -2,13 +2,13 @@
 	"__default__" :
 	{
 		"name": "{rule}.{wildcards.id}",
-		"partition": "cpu,veryshort,mrcieu",
+		"account": "SSCM013902",
+		"partition": "cpu,veryshort,mrcieu,mrcieu2",
 		"nodes": "1",
 		"ncpu": "1",
 		"ntask": "1",
-		"time": "2:00:00",
-		"mem": "32G",
+		"time": "6:00:00",
+		"mem": "64G",
 		"output": "job_reports/{rule}.{wildcards.id}.out"
 	}
 }
-

@@ -15,6 +15,6 @@ cd opengwas-reports
 Rscript render_gwas_report.R \
 	--output_dir ${gwasdir}/${id} \
 	--refdata /mnt/storage/private/mrcieu/research/scratch/IGD/data/dev/report-module-sample/mrbase-report-module/ref_data/1kg_v3_nomult.bcf \
-	-j 1 \
+	-j 5 \
 	--id ${id} \
 	${gwasdir}/${id}/${id}.vcf.gz

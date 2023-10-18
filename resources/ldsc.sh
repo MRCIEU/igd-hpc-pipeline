@@ -13,8 +13,7 @@ module load languages/anaconda3/2018.12
 cd gwas_processing
 source activate ldsc
 
-
-python ldsc.py \
+python2 ldsc.py \
 --bcf ${gwasdir}/${id}/${id}.vcf.gz \
 --ldsc_ref /mnt/storage/private/mrcieu/research/scratch/IGD/data/dev/reference/eur_w_ld_chr/ \
 --out ${gwasdir}/${id}/ldsc.txt
